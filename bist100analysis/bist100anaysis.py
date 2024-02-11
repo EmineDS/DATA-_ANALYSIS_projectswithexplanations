@@ -4,7 +4,7 @@ import pandas as pd
 from scipy import stats
 import pingouin as pg
 import scikit_posthocs as sp
-veri=pd.read_excel("C:\\Users\edisa\Desktop\\borsanaliz.xlsx")
+veri=pd.read_excel(".\\borsanaliz.xlsx")
 print(veri.head())
 pzt=veri[veri["GÜN"]=="Pazartesi"]
 sl=veri[veri["GÜN"]=="Salı"]
