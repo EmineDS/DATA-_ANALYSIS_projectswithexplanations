@@ -15,4 +15,13 @@ print(veri.sort_values(by=["Eğitimkod"]))#eğitim koduna göre sıraladık
 #diğer kategorik değişkenlerin hiyerarşik olmadığını bilgisayara söylemeliyiz
 onehotdonusum=pd.get_dummies(veri,columns=["Cinsiyet","AraçRenk"], dtype=int)
 print(onehotdonusum)
-#aralarında hiyerarşi tanımlamaması için kategorik değişkenleri parçaladı ve o şekilde numaralandırdı
+#aralarında hiyerarşi tanımlamaması için kategorik değişkenleri parçaladı ve o şekilde numaralandırdı. ve değişkenin kedisini sildi.
+#*************************** KUKLA DEĞİŞKEN TUZAĞI *******************************************************
+onehotdonusum=pd.get_dummies(veri,columns=["Cinsiyet"], dtype=int,drop_first=True)
+print(onehotdonusum)
+onehotdonusum=pd.get_dummies(veri,columns=["AraçRenk"], dtype=int,drop_first=True)
+print(onehotdonusum)
+#Kukla dönüşüm tuzağına düşmemek için kategorik değişkenlerin gruplarına tabma yaparken bir tanesini siler
+#iki grupsa örneğin erkek ve kadın gibi sadece bir tanesini gösterir
+#m tane grupsa m-1 tanesini gösterecektir.
+#drop_first parametresiyle çalışıyor
