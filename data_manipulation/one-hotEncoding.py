@@ -25,3 +25,10 @@ print(onehotdonusum)
 #iki grupsa örneğin erkek ve kadın gibi sadece bir tanesini gösterir
 #m tane grupsa m-1 tanesini gösterecektir.
 #drop_first parametresiyle çalışıyor
+#*************************** ORDİNAL DEĞİŞKEN DÖNÜŞÜMÜ *******************************************************
+#BİR KATEGORİK DEĞİŞKENİN GRUPLARI HİYERARŞİK İSE SIRALAMALIYIZ.
+#eğitim hiyerarşik ve en yüksek seviye doktora olduğundan doktoraya en yükse sayısal değer denk gelecek şekilde ayarlayacağız
+print(veri[["Eğitim","Eğitimkod"]])
+sıralı=pd.Categorical(veri.Eğitim,categories=["İlkokul","Lise","Üniversite","Yüksek lisans","Doktora"],ordered=True)
+veri["SıralıEğitim"],sıra=pd.factorize(sıralı,sort=True)
+print(veri[["Eğitim","Eğitimkod","SıralıEğitim"]])
